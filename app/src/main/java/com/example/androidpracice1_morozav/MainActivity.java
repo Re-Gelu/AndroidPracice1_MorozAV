@@ -15,8 +15,11 @@ import com.example.androidpracice1_morozav.databinding.ActivityMainBinding;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "MySexyApp";
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
@@ -24,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Log.d(TAG, "onCreate");
+        Toast.makeText(getApplicationContext(), "onCreate",  Toast.LENGTH_SHORT).show();
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -46,26 +52,31 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        Log.d(TAG, "onStart");
         Toast.makeText(getApplicationContext(), "onStart",  Toast.LENGTH_SHORT).show();
     }
     @Override
     protected void onStop() {
         super.onStop();
+        Log.d(TAG, "onStop");
         Toast.makeText(getApplicationContext(), "onStop",  Toast.LENGTH_SHORT).show();
     }
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        Log.d(TAG, "onDestroy");
         Toast.makeText(getApplicationContext(), "onDestroy",  Toast.LENGTH_SHORT).show();
     }
     @Override
     protected void onPause() {
         super.onPause();
+        Log.d(TAG, "onPause");
         Toast.makeText(getApplicationContext(), "onPause",  Toast.LENGTH_SHORT).show();
     }
     @Override
     protected void onResume() {
         super.onResume();
+        Log.d(TAG, "onResume");
         Toast.makeText(getApplicationContext(), "onResume",  Toast.LENGTH_SHORT).show();
     }
 
